@@ -1,3 +1,7 @@
+package hust.soict.dsai.aims.store;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
 public class Store {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private static int qtyStore = 0;
@@ -17,8 +21,8 @@ public class Store {
         qtyStore--;
     }
     public void showInfo(){
-        System.out.println("****************************Store**************************");
-        System.out.println("Store Items: ");
+        System.out.println("****************************hust.soict.dsai.aims.store.Store**************************");
+        System.out.println("hust.soict.dsai.aims.store.Store Items: ");
         for(int i = 0; i < qtyStore;i++){
             System.out.print((i+1)+". ");
             ItemsInStore[i].printinfo();

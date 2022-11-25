@@ -1,3 +1,6 @@
+package hust.soict.dsai.aims.cart;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
@@ -41,7 +44,7 @@ public class Cart {
     }
 
     public static void info(){
-        System.out.println("****************************Cart***************************");
+        System.out.println("****************************hust.soict.dsai.aims.cart.Cart***************************");
         System.out.println("Ordered Items: ");
         for(int i = 0; i < qtyOrdered;i++){
             System.out.print((i+1)+". ");
