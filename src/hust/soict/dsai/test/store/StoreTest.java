@@ -1,0 +1,23 @@
+package hust.soict.dsai.test.store;
+import hust.soict.dsai.aims.store.Store;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
+
+public class StoreTest {
+    public static void main(String args[]){
+        Store Pror1 = new Store();
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The King Lion",
+                "Animation",19.95f,"Roger Allers", 87);
+        Pror1.addStore(dvd1);
+
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star Wars",
+                "Science Fiction",24.95f,"George Lucas",87);
+        Pror1.addStore(dvd2);
+
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin",
+                "Animation", 18.99f);
+        Pror1.addStore(dvd3);
+        Pror1.showInfo();
+        Pror1.removeStore(dvd2);
+        Pror1.showInfo();
+    }
+}
