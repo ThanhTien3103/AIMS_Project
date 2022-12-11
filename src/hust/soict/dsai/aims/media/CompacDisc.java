@@ -35,4 +35,16 @@ public class CompacDisc extends Media implements Playable{
         for(Track s: tracks) sum += s.getLength();
         return sum;
     }
+
+    @Override
+    public void play() {
+        for(Track s: tracks) s.play();
+    }
+    public void printinfo(){
+        System.out.print("CompacDisc ");
+        System.out.print("- ["+ this.Title +"] ");
+        if(this.category != null)System.out.print("- ["+ this.category +"] ");
+        if(this.artist != null)System.out.print("- ["+ this.artist +"] ");
+        if(this.cost != 0)System.out.print(": ["+ this.cost +"] $");
+    }
 }

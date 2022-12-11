@@ -1,54 +1,41 @@
 package hust.soict.dsai.aims.cart;
-
+import java.util.List;
+import java.util.ArrayList;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
-    private static int qtyOrdered = 0;
-
-    private static DigitalVideoDisc items0rdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 
 
+    private List<Media> itemsOrdered = new ArrayList<Media>();
 
-    public static void addDigitalVideoDisc(DigitalVideoDisc dvd){
-        if(qtyOrdered < MAX_NUMBERS_ORDERED){
-            items0rdered[qtyOrdered] = new DigitalVideoDisc();
-            items0rdered[qtyOrdered] = dvd;
-            qtyOrdered++;
-        }
-    }
-    public static void addDigitalVideoDisc(DigitalVideoDisc [] dvdList){
-        int i = 0;
-        while (qtyOrdered < MAX_NUMBERS_ORDERED && dvdList[i] != null){
-            items0rdered[qtyOrdered] = new DigitalVideoDisc();
-            items0rdered[qtyOrdered] = dvdList[i];
-            i++;
-            qtyOrdered++;
+
+
+    public void addDigitalVideoDisc(Media media){
+        if(itemsOrdered.size() < MAX_NUMBERS_ORDERED){
+            itemsOrdered.add(media);
         }
     }
 
 
-    public static void removeDigitalVideoDisc(int i){
-        for(int j = i; j < qtyOrdered-1;j++){
-            items0rdered[j] = items0rdered[j+1];
-        }
-        items0rdered[qtyOrdered-1] = null;
-        qtyOrdered --;
+    public void removeDigitalVideoDisc(Media media){
+       if(itemsOrdered.contains(media)){
+           itemsOrdered.remove(media);
+       }
     }
-    public static float totalCost(){
+    public float totalCost(){
         float sumary = 0;
-        for(int i = 0; i < qtyOrdered;i++){
-            sumary += items0rdered[i].getCost();
-        }
+        for(Media s: itemsOrdered) sumary += s.getCost();
         return sumary;
     }
 
-    public static void info(){
+    public void info(){
         System.out.println("****************************hust.soict.dsai.aims.cart.Cart***************************");
         System.out.println("Ordered Items: ");
-        for(int i = 0; i < qtyOrdered;i++){
+        for(int i = 0; i < itemsOrdered.size();i++){
             System.out.print((i+1)+". ");
-            items0rdered[i].printinfo();
+            itemsOrdered.get(i).printinfo();
             System.out.println("");
         }
 

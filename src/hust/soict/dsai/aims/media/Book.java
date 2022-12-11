@@ -19,5 +19,11 @@ public class Book extends Media {
     public void removeAuthor(String author){
         if(this.authors.contains(author)) this.authors.remove(author);
     }
+    public void printinfo(){
+        System.out.print("Book ");
+        System.out.print("- ["+ this.Title +"] ");
+        if(this.category != null)System.out.print("- ["+ this.category +"] ");
+        if(this.cost != 0)System.out.print(": ["+ this.cost +"] $");
+    }
 
 }

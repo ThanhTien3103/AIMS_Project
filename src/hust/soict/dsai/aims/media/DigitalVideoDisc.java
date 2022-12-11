@@ -1,6 +1,6 @@
 package hust.soict.dsai.aims.media;
-import hust.soict.dsai.aims.media.Disc;
-public class DigitalVideoDisc extends Disc {
+
+public class DigitalVideoDisc extends Disc implements Playable {
 
     public DigitalVideoDisc(String title, String category, float cost, String director, int length) {
         super(title, category, cost, director, length);
@@ -14,7 +14,7 @@ public class DigitalVideoDisc extends Disc {
     public DigitalVideoDisc(String title, String category, float cost){
         super(title, category, cost);
     }
-    public DigitalVideoDisc() {
+    public DigitalVideoDisc(String oldTitle) {
     }
 
     public String getDirector() {
@@ -41,6 +41,11 @@ public class DigitalVideoDisc extends Disc {
         if(this.director != null)System.out.print("- ["+ this.director +"] ");
         if(this.length != 0)System.out.print("- ["+ this.length +"] ");
         if(this.cost != 0)System.out.print(": ["+ this.cost +"] $");
+    }
 
+    @Override
+    public void play() {
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
     }
 }
